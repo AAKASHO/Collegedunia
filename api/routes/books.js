@@ -1,11 +1,12 @@
 import express from 'express';
-import Book from '../models/Book.js';
 import { addBooks, deleteBook, editBook, getBook, getBooks, test } from '../controllers/book.controller.js';
 
 const router = express.Router();
 
 // POST /api/books - Create a new book
 router.get('/test',test);
+
+
 router.post('/', addBooks);
 
 

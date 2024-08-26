@@ -8,6 +8,10 @@ export const test=(req,res)=>{
 };
 
 
+/**
+ * 
+ * Add the new book with title,author,isbn,publishedDate in request body
+ */
 export const addBooks=async (req, res) => {
     try {
         const { title, author, isbn, publishedDate } = req.body;
@@ -80,6 +84,11 @@ export const getBooks=async(req,res)=>{
 }
 
 
+
+/**
+ * 
+ * edit the book with given isbn
+ */
 export const editBook = async (req, res) => {
     try {
         const { title, author, publishedDate } = req.body;
@@ -101,7 +110,10 @@ export const editBook = async (req, res) => {
 
 
 
-
+/**
+ * 
+ * Get the book with given isbn
+ */
 export const getBook = async (req, res) => {
     try {
         const book = await Book.findOne({ isbn: req.params.id });
