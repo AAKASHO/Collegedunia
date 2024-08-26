@@ -150,20 +150,20 @@ json
 #### **Retrieve details of a specific book**
 * **Method:** GET
 * **Endpoint:** `/api/books/:id`
-* **Path Parameter:** `:id` - The unique ID of the book to retrieve.
+* **Path Parameter:** `:id` - The unique ID of the book (ISBN) to retrieve(ISBN).
 * **Response:** A JSON object representing the specified book.
 
 #### **Update a book's information**
 * **Method:** PUT
 * **Endpoint:** `/api/books/:id`
-* **Path Parameter:** `:id` - The unique ID of the book to update.
+* **Path Parameter:** `:id` - The unique ID of the book (ISBN) to update.
 * **Request Body:** A JSON object containing the fields to be updated.
 * **Response:** A JSON object representing the updated book.
 
 #### **Delete a specific book**
 * **Method:** DELETE
 * **Endpoint:** `/api/books/:id`
-* **Path Parameter:** `:id` - The unique ID of the book to delete.
+* **Path Parameter:** `:id` - The unique ID of the book (ISBN) to delete.
 * **Response:** A success message or a status code indicating the success or failure of the deletion.
 
 **Example Request**

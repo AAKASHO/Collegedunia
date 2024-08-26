@@ -80,10 +80,14 @@ export const getBooks=async(req,res)=>{
 }
 
 
-export const editBook=async (req, res) => {
+export const editBook = async (req, res) => {
     try {
-        const { title, author, isbn, publishedDate } = req.body;
-        const updatedBook = await Book.findByIdAndUpdate(req.params.id, { title, author, isbn, publishedDate }, { new: true });
+        const { title, author, publishedDate } = req.body;
+        const updatedBook = await Book.findOneAndUpdate(
+            { isbn: req.params.id },
+            { title, author, publishedDate },
+            { new: true }
+        );
 
         if (!updatedBook) {
             return res.status(404).json({ message: 'Book not found' });
@@ -98,9 +102,9 @@ export const editBook=async (req, res) => {
 
 
 
-export const getBook=async (req, res) => {
+export const getBook = async (req, res) => {
     try {
-        const book = await Book.findById(req.params.id);
+        const book = await Book.findOne({ isbn: req.params.id });
         if (!book) {
             return res.status(404).json({ message: 'Book not found' });
         }
@@ -110,9 +114,10 @@ export const getBook=async (req, res) => {
     }
 }
 
-export const deleteBook=async (req, res) => {
+
+export const deleteBook = async (req, res) => {
     try {
-        const deletedBook = await Book.findByIdAndDelete(req.params.id);
+        const deletedBook = await Book.findOneAndDelete({ isbn: req.params.id });
 
         if (!deletedBook) {
             return res.status(404).json({ message: 'Book not found' });
