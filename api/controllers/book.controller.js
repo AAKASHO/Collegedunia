@@ -24,6 +24,20 @@ export const addBooks=async (req, res) => {
     }
 }
 
+
+
+// API Endpoint: /api/books
+
+/**
+ * Retrieves a list of books based on the provided query parameters.
+ *
+ * @param {number} limit - The number of books to return per page (default: 10).
+ * @param {number} skip - The number of books to skip before returning the results (default: 0).
+ * @param {string} search - A search query to filter the results (optional).
+ * @param {string} sortBy - The field to sort the results by (optional).
+ * @param {string} order - The sorting order (either asc for ascending or desc for descending, default: asc).
+ * @returns {Promise<Book[]>} A promise that resolves to an array of book objects.
+ */
 export const getBooks=async(req,res)=>{
     try {
         const { limit = 10, skip = 0, search, sortBy = 'publishedDate', order = 'desc' } = req.query;
@@ -80,6 +94,9 @@ export const editBook=async (req, res) => {
         res.status(500).json({ message: 'Error updating book', error });
     }
 }
+
+
+
 
 export const getBook=async (req, res) => {
     try {
