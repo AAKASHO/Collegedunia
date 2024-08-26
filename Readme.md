@@ -86,6 +86,18 @@ This API provides access to a collection of books. You can retrieve a list of al
   * `author`
   * `isbn`
   * `publishedDate`
+**Example Request**
+
+```json
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "isbn": "9780743273565",
+  "publishedDate": "1925-04-10"
+}
+```
+
+
 * **Response:** A JSON object representing the newly created book, including its unique ID.
 
 * **GET /api/books**
@@ -99,7 +111,7 @@ This endpoint retrieves a list of books. You can use query parameters to control
 | limit       | The number of books to return per page                 | 10            | Positive integer |
 | skip        | The number of books to skip before returning results     | 0             | Positive integer |
 | search      | A search query to filter the results by title or author (optional) | -             | String         |
-| sortBy      | The field to sort the results by (optional)             | -             | title, author |
+| sortBy      | The field to sort the results by (optional)             | -             | title, author,publishedDate,isbn |
 | order       | The sorting order (either asc or desc, default: asc)     | asc           | asc, desc      |
 
 ## Response
@@ -109,22 +121,29 @@ The response is a JSON array containing objects representing the filtered and so
 * **id** (integer): The unique identifier of the book.
 * **title** (string): The title of the book.
 * **author** (string): The author of the book. (Optional, depending on your data model)
-* **...(other properties specific to your books)**
+* **isbn** (string) isbn for a book
+
 
 **Example Response:**
 json
 ```
 [
   {
-    "id": 1,
-    "title": "The Lord of the Rings",
-    "author": "J.R.R. Tolkien"
-  },
+      "_id": "66ccbae5aeedcaf7416d31ea",
+      "title": "Book11",
+      "author": "author4",
+      "isbn": "11",
+      "publishedDate": "1999-11-28T00:00:00.000Z",
+      "__v": 0
+    },
   {
-    "id": 2,
-    "title": "Pride and Prejudice",
-    "author": "Jane Austen"
-  },
+      "_id": "66ccbae5weedcaf7416d31ea",
+      "title": "Book12",
+      "author": "author5",
+      "isbn": "12",
+      "publishedDate": "1999-11-28T00:00:00.000Z",
+      "__v": 0
+    },
   // ... (more books)
 ]
 ```
