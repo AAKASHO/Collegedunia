@@ -68,7 +68,15 @@ npm run dev
 
 
 
-**Endpoints**
+
+# Book API Documentation
+
+
+This API provides access to a collection of books. You can retrieve a list of all books or filter and sort them based on your needs.
+
+## Endpoints
+
+
 
 #### **Create a new book**
 * **Method:** POST
@@ -79,12 +87,6 @@ npm run dev
   * `isbn`
   * `publishedDate`
 * **Response:** A JSON object representing the newly created book, including its unique ID.
-
-# Book API Documentation
-
-This API provides access to a collection of books. You can retrieve a list of all books or filter and sort them based on your needs.
-
-## Endpoints
 
 * **GET /api/books**
 
