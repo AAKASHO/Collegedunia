@@ -166,16 +166,7 @@ json
 * **Path Parameter:** `:id` - The unique ID of the book (ISBN) to delete.
 * **Response:** A success message or a status code indicating the success or failure of the deletion.
 
-**Example Request**
 
-```json
-{
-  "title": "The Great Gatsby",
-  "author": "F. Scott Fitzgerald",
-  "isbn": "9780743273565",
-  "publishedDate": "1925-04-10"
-}
-```
 
 
 
